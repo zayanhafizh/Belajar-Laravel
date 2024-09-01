@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,4 @@ Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
-Route::post('/registration', [LoginController::class,'store']);
+Route::post('/registration', [RegistrationController::class,'store']);
