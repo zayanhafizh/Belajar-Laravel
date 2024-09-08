@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
 {
+    public function index()
+    {
+        return view('registration');
+    }
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -19,5 +23,6 @@ class RegistrationController extends Controller
 
         $validated['password'] = Hash::make($validated['password']);
         User::create($validated);
+        return redirect()->route('login')->with('success', 'Registration successful');
     }
 }

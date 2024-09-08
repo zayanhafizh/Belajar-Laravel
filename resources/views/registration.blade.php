@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-4">
+        <div class="col-lg-3">
             <div class="container mt-5">
                 <form action="/registration" method="POST">
                     @csrf
@@ -51,6 +51,9 @@
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Register</button>
+                    <small class="mb-3 d-flex">
+                        <a href="/login" class="d-flex text-decoration-none">Back to login</a>
+                    </small>
                 </form>
             </div>
         </div>

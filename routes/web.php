@@ -20,8 +20,18 @@ Route::get('/', function () {
     return view('registration');
 });
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'])->middleware('auth');
 
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
+Route::get('registration', [RegistrationController::class, 'index']);
+
 Route::post('/registration', [RegistrationController::class,'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/dashboard', function () {
+    return "Helo Zayan";
+});
